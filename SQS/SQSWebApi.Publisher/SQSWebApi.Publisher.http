@@ -1,0 +1,7 @@
+@SQSWebApi.Publisher_HostAddress = http://localhost:5110
+
+
+POST {{SQSWebApi.Publisher_HostAddress}}/api/orders
+Accept: application/json
+
+###

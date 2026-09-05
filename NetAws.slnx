@@ -1,1 +1,9 @@
-<Solution />
+<Solution>
+  <Folder Name="/SQS/">
+    <Project Path="SQS/SQS.Shared/SQS.Shared.csproj" Id="e11f67e0-08b3-4d1c-9736-32b9362f3f84" />
+    <Project Path="SQS/SQSConsumer/SQSConsumer.csproj" Id="a1b310e6-5cc9-4a7b-9ebe-b683c7f62ad1" />
+    <Project Path="SQS/SQSPublisher/SQSPublisher.csproj" Id="0a9abc9d-8807-418b-8785-7f42735b3212" />
+    <Project Path="SQS/SQSWebApi.Consumer/SQSWebApi.Consumer.csproj" Id="ee9b9f2e-164a-4beb-9ec5-6460ff7d2013" />
+    <Project Path="SQS/SQSWebApi.Publisher/SQSWebApi.Publisher.csproj" Id="7243afff-6c65-495c-8e5c-029e83f715ea" />
+  </Folder>
+</Solution>
