@@ -1,28 +1,24 @@
-using Amazon.SQS;
-using Amazon.SQS.Model;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Amazon.SimpleNotificationService;
 using Microsoft.Extensions.Hosting;
-using SQS.Shared;
+using SNS.Shared;
 
 var builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddSharedServices(builder.Configuration);
 
 using var host = builder.Build();
+var snsClient = host.Services.GetRequiredService<IAmazonSimpleNotificationService>();
 
-var queueName = args.Length > 0 ? args[0] : "customers";
-var sqsClient = host.Services.GetRequiredService<IAmazonSQS>();
-
-var queueUrlResponse = await sqsClient.GetQueueUrlAsync(queueName);
+var topicArnResponse = await snsClient.FindTopicAsync("customers");
 var recieveMessageRequest = new ReceiveMessageRequest
 {
-    QueueUrl = queueUrlResponse.QueueUrl,
+    TopicArn = topicArnResponse.TopicArn,
     MessageAttributeNames = new List<string>() { "All" },
 };
 
 var cts = new CancellationTokenSource();
 while (!cts.Token.IsCancellationRequested)
 {
-    var response = await sqsClient.ReceiveMessageAsync(recieveMessageRequest, cts.Token);
+    var response = await snsClient.ReceiveMessageAsync(recieveMessageRequest, cts.Token);
     foreach (var message in response.Messages ?? Enumerable.Empty<Message>())
     {
         try
