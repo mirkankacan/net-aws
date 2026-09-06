@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace SQSWebApi.Consumer.Messaging
 {
-    public sealed class Consumer(IAmazonSQS sqsClient)
+    public sealed class SqsConsumer(IAmazonSQS sqsClient)
     {
         public async Task ReceiveMessageAsync<T>(string queueName, CancellationToken cancellationToken = default)
         {

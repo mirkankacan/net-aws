@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddSharedServices(builder.Configuration);
-builder.Services.AddSingleton<Consumer>();
+builder.Services.AddSingleton<SqsConsumer>();
 builder.Services.AddHostedService<OrderConsumerBackgroundService>();
 var app = builder.Build();
 

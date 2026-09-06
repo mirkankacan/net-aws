@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/SNS/">
+    <Project Path="SNS/SNS.Shared/SNS.Shared.csproj" Id="a9e8a6f4-41cf-4e4e-9283-4f7d23b802f8" />
+    <Project Path="SNS/SNSPublisher/SNSPublisher.csproj" Id="ddc296d3-c4f4-467c-aa39-a5258730513c" />
+    <Project Path="SNS/SNSWebApi.Publisher/SNSWebApi.Publisher.csproj" Id="bf935a0b-ecbb-4f98-963a-a605889ada2b" />
+  </Folder>
   <Folder Name="/SQS/">
     <Project Path="SQS/SQS.Shared/SQS.Shared.csproj" Id="e11f67e0-08b3-4d1c-9736-32b9362f3f84" />
     <Project Path="SQS/SQSConsumer/SQSConsumer.csproj" Id="a1b310e6-5cc9-4a7b-9ebe-b683c7f62ad1" />

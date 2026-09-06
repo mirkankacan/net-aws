@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace SQSWebApi.Publisher.Messaging
 {
-    public sealed class Publisher(IAmazonSQS sqsClient)
+    public sealed class SqsPublisher(IAmazonSQS sqsClient)
     {
         public async Task<SendMessageResponse> SendMessageAsync<T>(T message, string queueName, string messageType, CancellationToken cancellationToken = default)
         {

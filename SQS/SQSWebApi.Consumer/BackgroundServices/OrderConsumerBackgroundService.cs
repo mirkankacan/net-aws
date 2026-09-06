@@ -3,7 +3,7 @@ using SQSWebApi.Consumer.Models;
 
 namespace SQSWebApi.Consumer.BackgroundServices
 {
-    public class OrderConsumerBackgroundService(Messaging.Consumer consumer) : BackgroundService
+    public class OrderConsumerBackgroundService(Messaging.SqsConsumer consumer) : BackgroundService
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {

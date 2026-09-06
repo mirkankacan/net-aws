@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddSharedServices(builder.Configuration);
-builder.Services.AddSingleton<Publisher>();
+builder.Services.AddSingleton<SqsPublisher>();
 
 var app = builder.Build();
 
@@ -22,7 +22,7 @@ if (app.Environment.IsDevelopment())
 
 
 
-app.MapPost("/api/orders", async (Publisher publisher, CancellationToken cancellationToken) =>
+app.MapPost("/api/orders", async (SqsPublisher publisher, CancellationToken cancellationToken) =>
 {
     var baskets = Basket.GetAll();
     var orders = new List<Order>();
