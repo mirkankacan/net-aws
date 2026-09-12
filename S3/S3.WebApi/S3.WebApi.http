@@ -1,0 +1,22 @@
+@S3.WebApi_HostAddress = http://localhost:5082
+
+POST {{S3.WebApi_HostAddress}}/api/image
+Content-Type: multipart/form-data; boundary=----S3WebApiBoundary
+
+------S3WebApiBoundary
+Content-Disposition: form-data; name="file"; filename="Rembrandt_Man_in_Armour.jpg"
+Content-Type: image/jpeg
+
+< ./Rembrandt_Man_in_Armour.jpg
+------S3WebApiBoundary--
+
+###
+
+GET {{S3.WebApi_HostAddress}}/api/image/9aa7db04-6c57-4e29-bcbd-29ccb792ef69
+Accept: application/json
+
+###
+
+DELETE {{S3.WebApi_HostAddress}}/api/image/9aa7db04-6c57-4e29-bcbd-29ccb792ef69
+
+###

@@ -9,20 +9,17 @@ namespace SNS.Shared
     {
         public static IServiceCollection AddSharedServices(this IServiceCollection services, IConfiguration configuration)
         {
-            AddSns(services);
+            AddSns(services, configuration);
             return services;
         }
 
-        private static void AddSns(IServiceCollection services)
+        private static void AddSns(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<IAmazonSimpleNotificationService>(sp =>
-            {
-                var configuration = sp.GetRequiredService<IConfiguration>();
-                var accessKey = configuration["AwsOptions:AccessKey"];
-                var secretKey = configuration["AwsOptions:SecretKey"];
-                var credentials = new BasicAWSCredentials(accessKey, secretKey);
-                return new AmazonSimpleNotificationServiceClient(credentials, Amazon.RegionEndpoint.EUWest3);
-            });
+            var accessKey = configuration["AwsOptions:AccessKey"];
+            var secretKey = configuration["AwsOptions:SecretKey"];
+            var credentials = new BasicAWSCredentials(accessKey, secretKey);
+
+            services.AddSingleton<IAmazonSimpleNotificationService>(_ => new AmazonSimpleNotificationServiceClient(credentials, Amazon.RegionEndpoint.EUWest3));
         }
     }
 }

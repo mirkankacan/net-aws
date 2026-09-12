@@ -8,20 +8,17 @@ namespace SQS.Shared
     {
         public static IServiceCollection AddSharedServices(this IServiceCollection services, IConfiguration configuration)
         {
-            AddSqs(services);
+            AddSqs(services, configuration);
             return services;
         }
 
-        private static void AddSqs(IServiceCollection services)
+        private static void AddSqs(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<IAmazonSQS>(sp =>
-            {
-                var configuration = sp.GetRequiredService<IConfiguration>();
-                var accessKey = configuration["AwsOptions:AccessKey"];
-                var secretKey = configuration["AwsOptions:SecretKey"];
-                var credentials = new Amazon.Runtime.BasicAWSCredentials(accessKey, secretKey);
-                return new AmazonSQSClient(credentials, Amazon.RegionEndpoint.EUWest3);
-            });
+            var accessKey = configuration["AwsOptions:AccessKey"];
+            var secretKey = configuration["AwsOptions:SecretKey"];
+            var credentials = new Amazon.Runtime.BasicAWSCredentials(accessKey, secretKey);
+
+            services.AddSingleton<IAmazonSQS>(_ => new AmazonSQSClient(credentials, Amazon.RegionEndpoint.EUWest3));
         }
     }
 }
