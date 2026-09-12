@@ -1,0 +1,38 @@
+@DynamoDb.Api_HostAddress = http://localhost:5067
+
+GET {{DynamoDb.Api_HostAddress}}/api/customers
+Accept: application/json
+
+###
+
+GET {{DynamoDb.Api_HostAddress}}/api/customers/email/test@gmail.com
+Accept: application/json
+
+
+###
+
+POST {{DynamoDb.Api_HostAddress}}/api/customers
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "address": "123 Main St",
+  "email":"test@gmail.com"
+}
+
+###
+
+PUT {{DynamoDb.Api_HostAddress}}/api/customers/c5237853-5c90-429b-93de-684ecbbff747
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "address": "456 Elm St",
+  "email":"test2@gmail.com"
+}
+
+###
+
+DELETE {{DynamoDb.Api_HostAddress}}/api/customers/524d809a-9ab5-4c0e-99b7-089516ad07ea
+
+###

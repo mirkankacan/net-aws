@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/DynamoDb/">
+    <Project Path="DynamoDb/DynamoDb.Api/DynamoDb.Api.csproj" Id="54873c73-a55f-40bf-b864-5dacf93f7b2f" />
+    <Project Path="DynamoDb/DynamoDb.Transaction/DynamoDb.Transaction.csproj" Id="796141e9-6caa-404e-9916-eb86e615fa4c" />
+  </Folder>
   <Folder Name="/SNS/">
     <Project Path="SNS/SNS.Shared/SNS.Shared.csproj" Id="a9e8a6f4-41cf-4e4e-9283-4f7d23b802f8" />
     <Project Path="SNS/SNSPublisher/SNSPublisher.csproj" Id="ddc296d3-c4f4-467c-aa39-a5258730513c" />
