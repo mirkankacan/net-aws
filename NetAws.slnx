@@ -8,6 +8,10 @@
     <Project Path="S3/S3Downloader/S3Downloader.csproj" Id="cbcbe277-71c8-436f-a3b7-59ed4633d3fc" />
     <Project Path="S3/S3Uploader/S3Uploader.csproj" Id="632492be-ee03-4d25-a1ee-29b81b95364f" />
   </Folder>
+  <Folder Name="/SecretsManager/">
+    <Project Path="SecretsManager/SecretsManager.App/SecretsManager.App.csproj" Id="4c116292-7ec8-4d71-a65f-4b46aa5dd4bc" />
+    <Project Path="SecretsManager/SecretsManager.WebApi/SecretsManager.WebApi.csproj" Id="a71523f1-ddb9-413a-b0c3-671e4b9f4fd3" />
+  </Folder>
   <Folder Name="/SNS/">
     <Project Path="SNS/SNS.Shared/SNS.Shared.csproj" Id="a9e8a6f4-41cf-4e4e-9283-4f7d23b802f8" />
     <Project Path="SNS/SNSPublisher/SNSPublisher.csproj" Id="ddc296d3-c4f4-467c-aa39-a5258730513c" />
