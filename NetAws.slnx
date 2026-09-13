@@ -3,6 +3,14 @@
     <Project Path="DynamoDb/DynamoDb.Api/DynamoDb.Api.csproj" Id="54873c73-a55f-40bf-b864-5dacf93f7b2f" />
     <Project Path="DynamoDb/DynamoDb.Transaction/DynamoDb.Transaction.csproj" Id="796141e9-6caa-404e-9916-eb86e615fa4c" />
   </Folder>
+  <Folder Name="/Lambda/">
+    <Project Path="Lambda/LambdaDynamoDb/LambdaDynamoDb.csproj" Id="8dc008ac-bcb9-4d8c-b69e-590709e2fe46" />
+    <Project Path="Lambda/LambdaS3/LambdaS3.csproj" Id="cdcc9d12-c639-42a9-8991-896d4853eabe" />
+    <Project Path="Lambda/LambdaSns/LambdaSns.csproj" Id="b2c8cbfd-7e0c-4ebc-8e9e-99f1906c767f" />
+    <Project Path="Lambda/LambdaSqs/LambdaSqs.csproj" Id="91a53411-5e95-4430-9b1c-ef7a9fa556f8" />
+    <Project Path="Lambda/SimpleLambda/SimpleLambda.csproj" Id="b0128e14-9e90-4f89-8538-39c5a83a303f" />
+    <Project Path="Lambda/SimpleLambdaHttp/SimpleLambdaHttp.csproj" Id="24e00583-9292-44c4-a6ae-404e0f8d803a" />
+  </Folder>
   <Folder Name="/S3/">
     <Project Path="S3/S3.WebApi/S3.WebApi.csproj" Id="1326cdef-7736-47df-84de-61ae1da9d3ea" />
     <Project Path="S3/S3Downloader/S3Downloader.csproj" Id="cbcbe277-71c8-436f-a3b7-59ed4633d3fc" />

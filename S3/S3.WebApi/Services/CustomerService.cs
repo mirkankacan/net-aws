@@ -19,7 +19,8 @@ namespace S3.WebApi.Services
                 Metadata =
                 {
                       ["x-amz-meta-extension"] = Path.GetExtension(file.FileName),
-                      ["x-amz-meta-title"] = file.FileName
+                      ["x-amz-meta-original-name"] = file.FileName,
+                      ["x-amz-meta-resized"] = false.ToString()
                 }
             };
             await s3.PutObjectAsync(putObjRequest, cancellationToken);
