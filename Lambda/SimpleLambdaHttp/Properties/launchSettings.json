@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Lambda Test Tool Debug": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\9060XT V1\\.dotnet\\tools\\dotnet-lambda-test-tool-10.0.exe",
+      "workingDirectory": "C:\\Users\\9060XT V1\\source\\repos\\NetAws\\Lambda\\SimpleLambdaHttp"
+    }
+  }
+}
